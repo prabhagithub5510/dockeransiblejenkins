@@ -3,11 +3,12 @@
   become: True
   tasks:
     - name: Install python pip
-      yum:
+      apt:
         name: python-pip
         state: present
+        update_cache: yes
     - name: Install docker
-      yum:
+      apt:
         name: docker
         state: present
     - name: start docker
